@@ -64,7 +64,7 @@ function covprodut(x,k,nsav,b,d,dsum,dsuminv)
     for i=1:n
         y[i]=x[i]*dsum[i]+real(sum(ss))
         for j = 1:k
-            ss[k]=(ss[k]+x[i]*conj(d[k,i]))*conjb[k]
+            ss[j]=(ss[j]+x[i]*conj(d[j,i]))*conjb[j]
         end
     end
     return y
@@ -87,7 +87,7 @@ function covsolut(y,k,nsav,b,d,dsum,dsuminv)
     for i=1:n
         x[i]=(y[i]-real(sum(ss)))*dsuminv[i]
         for j = 1:k
-            ss[k] =(ss[k]+x[i]*conj(d[k,i]))*conjb[k]
+            ss[j] =(ss[j]+x[i]*conj(d[j,i]))*conjb[j]
         end
     end
     return x
